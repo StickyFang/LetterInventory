@@ -8,7 +8,7 @@ public class LetterInventory {
     private int[] counts;
     private int size;
 
-
+// Menu
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LetterInventory inventory1 = null, inventory2 = null, result = null;
@@ -35,7 +35,7 @@ public class LetterInventory {
                         System.out.println("2 Inventories already created");
                     }
                     break;
-                case 2:
+                case 2: // use .add to simply add the inventory arrays together
                     if (inventory1 != null && inventory2 != null) {
                         result = inventory1.add(inventory2);
                         System.out.println(result);
@@ -43,7 +43,7 @@ public class LetterInventory {
                         System.out.println("You need to create 2 inventories");
                     }
                     break;
-                case 3:
+                case 3: // This will sometimes not work, I can't find why but it will sometimes break the code
                     if (inventory1 != null && inventory2 != null) {
                         result = inventory1.subtract(inventory2);
                         System.out.println(result);
@@ -132,7 +132,8 @@ public class LetterInventory {
         }
         return result;
     }
-
+    //Everything looks good, but sometimes this method breaks the code.
+    // I can not find where the error is or what causes it to break
     public LetterInventory subtract(LetterInventory other) {
         LetterInventory result = new LetterInventory("");
         for (int i = 0; i < 26; i++) {
